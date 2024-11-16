@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vrchat_speech_assistant"
+dependencies = [
+    "boto3>=1.28.73,<2",
+    "botocore>=1.31.73,<2",
+    "chatbox_osc @ git+https://gitlab.com/ameliend/chatbox_osc.git",
+    "deepl>=1.15.0,<2",
+    "logger @ git+https://gitlab.com/ameliend/logger.git",
+    "pyaudio-devices @ git+https://gitlab.com/ameliend/pyaudio-devices.git",
+    "pygame>=2.5.2,<3",
+    "PySide6==6.6.0",
+    "python_osc>=1.8.3,<2",
+    "speechrecognition>=3.10.0,<4",
+]
+requires-python = ">= 3.8"
+authors = [
+  {name = "Amelien Deshams", email = "a.deshams+git@slmail.me"}
+]
+maintainers = [
+  {name = "Amelien Deshams", email = "a.deshams+git@slmail.me"}
+]
+description = "The VRChat Speech Assistant allows you to use a speech to speech, with automatic translation. And / or speech to text with the VRChat chatbox using OSC protocol."
+readme = "README.md"
+license = {text = "MIT license"}
+keywords = []
+classifiers = [ # https://pypi.org/classifiers/
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Win32 (MS Windows)",
+    "Intended Audience :: End Users/Desktops",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Utilities",
+    "Topic :: System :: Networking",
+    "Topic :: Communications :: Chat",
+    "Topic :: Multimedia :: Sound/Audio :: Sound Synthesis",
+]
+dynamic = ["version"]
+
+[tool.setuptools.dynamic]
+version = {attr = "vrchat_speech_assistant._version.__version__"}
+
+[project.optional-dependencies]
+documentation = [
+    "recommonmark",
+    "sphinx",
+    "sphinx-automodapi",
+    "sphinx-copybutton",
+    "sphinx_rtd_theme",
+    "sphinxcontrib-napoleon"
+]
+tests = [
+    "pytest",
+]
+
+[project.urls]
+Documentation = "https://ameliend.gitlab.io/vrchat-speech-assistant"
+Repository = "https://gitlab.com/ameliend/vrchat-speech-assistant"
+Issues ="https://gitlab.com/ameliend/vrchat-speech-assistant/issues"
+Changelog  ="https://gitlab.com/ameliend/vrchat-speech-assistant/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+

@@ -1,0 +1,11 @@
+# Unmute if you want to include these directories
+
+# -> Include resources directory
+# Useful if you need to include resources,
+# such as icons, audio files, or anything else...
+#
+graft src/vrchat_speech_assistant/resources
+
+# -> Include tests directory
+#
+# graft tests
